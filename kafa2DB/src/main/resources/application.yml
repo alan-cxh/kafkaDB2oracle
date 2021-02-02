@@ -1,0 +1,21 @@
+server:
+  port: 9090
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@10.1.8.15:1521:oracle12c
+    username: paas2
+    password: U%HYKs#n_3
+  kafka:
+    bootstrap-servers: 10.1.8.15:9092
+    consumer:
+      auto-offset-reset: latest
+      enable-auto-commit: true
+      autoCommitInterval: 5000
+      max-poll-records: 1000
+    listener:
+      type: BATCH
+kafka:
+  group-id: group1
+  topic:
+    pattern: postgres.paas.*
